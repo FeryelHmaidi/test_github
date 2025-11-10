@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application CRUD Pour La Gestion Des Etudiants</title>
+    <style>
+        body {
+            background-color:#3b2436;
+            font-family:Arial,sans-serif;
+            margin:20px;
+            font-size: medium;
+
+        }
+        h1 {
+            text-align:center;
+            
+            color: #fffcff;
+            text-shadow: dimgray;
+          
+        }
+        form {
+            margin-bottom:20px;
+            padding:20px;
+            background-color: aliceblue;
+            border-radius: 8px;
+            box-shadow: rgb(175, 213, 175);
+
+        }
+        input,select,button{
+            display:flex;
+            width: 100%;
+            margin: 10px 0 ;
+            padding:10px  ;
+            border:2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-align:left;
+
+        }
+        button{
+            background-color:#2caf18;
+            justify-content: center;
+            
+        }
+        button:hover{
+            background-color: rgb(65, 130, 4);
+        }
+        table{
+            justify-content: center;
+            width: 100%;
+            text-align:left;
+            background-color: #ffffff;
+            border: 2px;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            border-radius: 4px rgb(220, 138, 24);
+            
+            
+        }
+        th td {
+            padding: 10px;
+            border-bottom: 10px 0;
+
+            
+        }
+
+        th{
+            background-color: rgba(203, 196, 196, 0.936);
+            color: rgb(26, 21, 21);
+            
+            
+          
+        }
+         #search, #filter {
+            margin-bottom: 10px;
+        }
+        .edit-btn {
+            background: #ffc107;
+            color: black;
+        }
+        .delete-btn {
+            background: #dc3545;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    form, table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    input, select, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    th, td {
+        font-size: 13px;
+        padding: 6px;
+    }
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .edit-btn, .delete-btn {
+        width: 100%;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    
+    <h1 >Système De Gestion Des Etudiants</h1>
+    
+    <form method="#" id="form"  >
+        <input type="text"  id="name" placeholder="Nom et Prenom de l'etudiant...">
+        <input type="text" id="age" placeholder="Age de l'etudiant...">
+            <select id="note">
+                <option value="">Sélectionner la note</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select>
+            <button type="submit" >Ajauter Etudiant</button>
+
+    </form>
+    <div>
+        <input type="text" id="search" placeholder="Recherche par nom...">
+        <select id="filtre">
+                <option value="">Filtrer par note</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+            </select>
+        
+    </div>
+    <table id="table">
+        <thead>
+            <tr>
+                <th data-sort="Nom">Nom </th>
+                <th data-sort="age">age</th>
+                <th data-sort="Note">note</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--les etudiants seront affichés ici-->
+        </tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+   
+    const form = document.getElementById("form");
+        const Inputname = document.getElementById("name");
+        const Inputage = document.getElementById("age");
+        const Inputnote = document.getElementById("note");
+        const Inputsearch = document.getElementById("search");
+        const Inputfiltre = document.getElementById("filtre");
+        const table = document.getElementById("table");
+        const th = document.querySelectorAll('th[data-sort]');
+        const studentList = document.querySelector("#table tbody");
+
+        let students = JSON.parse(localStorage.getItem('students')) || [];
+        let editingId = null;
+        let sortOrder = { nom: 'asc', age: 'asc', note: 'asc' };
+        
+        // ici je vais afficher les étudiants
+        function renderStudents(filteredStudents = students) {
+            studentList.innerHTML = '';
+            filteredStudents.forEach(student => {
+                const row = document.createElement('tr');
+                row.classList.add('fade-in');
+                row.innerHTML = `
+                    <td>${student.nom}</td>
+                    <td>${student.age}</td>
+                    <td>${student.note}</td>
+                    <td class="actions">
+                        <button class="edit-btn" onclick="editStudent(${student.id})">Modifier</button>
+                        <button class="delete-btn" onclick="deleteStudent(${student.id})">Supprimer</button>
+                    </td>
+                `;
+                studentList.appendChild(row);
+            });
+        }
+
+        // ici je vais sauvgarder les etudiants
+        function saveStudents() {
+            localStorage.setItem('students', JSON.stringify(students));
+        }
+
+        // Ajouter ou mettre à jour un étudiant
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nom = Inputname.value.trim();
+            const age = parseInt(Inputage.value);
+            const note = Inputnote.value;
+
+            if (!nom || !age || !note) return alert("Veuillez remplir tous les champs !");
+
+            if (editingId) {
+                const student = students.find(s => s.id === editingId);
+                student.nom = nom;
+                student.age = age;
+                student.note = note;
+                editingId = null;
+                form.querySelector('button').textContent = 'Ajouter Etudiant';
+            } else {
+                const newStudent = { id: Date.now(), nom, age, note };
+                students.push(newStudent);
+            }
+
+            saveStudents();
+            renderStudents();
+            form.reset();
+        });
+
+        // Modifier un étudiant
+        function editStudent(id) {
+            const student = students.find(s => s.id === id);
+            Inputname.value = student.nom;
+            Inputage.value = student.age;
+            Inputnote.value = student.note;
+            editingId = id;
+            form.querySelector('button').textContent = 'Mettre à Jour Étudiant';
+        }
+
+        // Supprimer un étudiant
+        function deleteStudent(id) {
+            const row = document.querySelector(`tr:has(button[onclick="deleteStudent(${id})"])`);
+            row.classList.add('fade-out');
+            students = students.filter(s => s.id !== id);
+            saveStudents();
+            renderStudents();
+        }
+
+        // Trier le tableau
+        th.forEach(header => {
+            header.addEventListener('click', () => {
+                const key = header.dataset.sort;
+                sortOrder[key] = sortOrder[key] === 'asc' ? 'desc' : 'asc';
+                students.sort((a, b) => {
+                    if (a[key] < b[key]) return sortOrder[key] === 'asc' ? -1 : 1;
+                    if (a[key] > b[key]) return sortOrder[key] === 'asc' ? 1 : -1;
+                    return 0;
+                });
+                renderStudents();
+            });
+        });
+
+        // Recherche
+        Inputsearch.addEventListener('input', () => {
+            const query = Inputsearch.value.toLowerCase();
+            const filtered = students.filter(student => student.nom.toLowerCase().includes(query));
+            renderStudents(filtered);
+        });
+
+        // Filtrage
+        Inputfiltre.addEventListener('change', () => {
+            const grade = Inputfiltre.value;
+            const filtered = grade ? students.filter(student => student.note === grade) : students;
+            renderStudents(filtered);
+        });
+
+        // Rendu initial
+        renderStudents();
+    
+</script>
