@@ -62,16 +62,7 @@ L’application permet d’ajouter, modifier, supprimer et visualiser des étudi
 Cette application est **légère** et fonctionne entièrement dans le navigateur, sans serveur.
 
 
-##  Lien du rendu final (GitHub Pages)
-👉 Voir le projet en ligne: (https://hmaidi-feryel.github.io/hmaidi_feryel_gestion_etudiants/)
-
-
-##  Dépôt GitHub
-👉 (https://github.com/hmaidi-feryel/hmaidi_feryel_gestion_etudiants)
-
-
-
-## 🧩 Nouveautés explorées
+##  Nouveautés explorées
 - LocalStorage pour persistance des données  
 - Création dynamique et manipulation du DOM  
 - Animations CSS pour UX  
@@ -89,3 +80,14 @@ Cette application est **légère** et fonctionne entièrement dans le navigateur
 - Tests et validation progressive de chaque fonctionnalité  
 - j'ai fait des recherches sur google et youtube pour apprendre des nouveaux choses utiles et qui me permettent de finir le projet avec succés 
 - De plus j'ai regardé des videos pour mieux comprendre le DOM et l'appliquer sur mon projet
+  
+## Informations de rendu
+- Enseignante : **Rania Maalej**  
+- Dépôt à faire sur Moodle avec :  
+  - 🔗 Lien du dépôt GitHub : [Voir le dépôt](https://github.com/hmaidi-feryel/hmaidi_feryel_gestion_etudiants)  
+  - 🔗 Lien GitHub Pages (rendu final) : [Voir le projet en ligne](https://hmaidi-feryel.github.io/hmaidi_feryel_gestion_etudiants/)
+
+
+
+
+
