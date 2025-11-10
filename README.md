@@ -1,6 +1,6 @@
 # Nom de projet:  Système de Gestion des Étudiants
 
-# présenté par**Hmaidi Feryel**
+# présenté par **Hmaidi Feryel**
 
 
 #  Description du projet: 
@@ -9,7 +9,7 @@ Cette application est un mini-projet web CRUD permettant de gérer une liste d�
 Elle a été réalisée avec **HTML, CSS et JavaScript pur** et fonctionne entièrement dans le navigateur, sans frameworks externes comme vous nous avez indiqué.
 L’application permet d’ajouter, modifier, supprimer et visualiser des étudiants, avec des fonctionnalités de tri, recherche et filtrage.
 
-#  Technologies utilisées
+# Technologies utilisées
 - **HTML5** → structure de la page  
 - **CSS3** → design, responsive et animations  
 - **JavaScript (ES6)** → logique et interactivité  
@@ -71,7 +71,7 @@ Cette application est **légère** et fonctionne entièrement dans le navigateur
 
 
 
-## 🧩 Nouveautés explorées
+##  Nouveautés explorées
 - LocalStorage pour persistance des données  
 - Création dynamique et manipulation du DOM  
 - Animations CSS pour UX  
