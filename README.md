@@ -61,16 +61,6 @@ L’application permet d’ajouter, modifier, supprimer et visualiser des étudi
 
 Cette application est **légère** et fonctionne entièrement dans le navigateur, sans serveur.
 
-
-##  Lien du rendu final (GitHub Pages)
-👉 Voir le projet en ligne: (https://hmaidi-feryel.github.io/hmaidi_feryel_gestion_etudiants/)
-
-
-##  Dépôt GitHub
-👉 (https://github.com/hmaidi-feryel/hmaidi_feryel_gestion_etudiants)
-
-
-
 ##  Nouveautés explorées
 - LocalStorage pour persistance des données  
 - Création dynamique et manipulation du DOM  
