@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +7,7 @@
     <title>Application CRUD Pour La Gestion Des Etudiants</title>
     <style>
         body {
-            background-color:#3b2436;
+            background-color:#48093c;
             font-family:Arial,sans-serif;
             margin:20px;
             font-size: medium;
@@ -14,8 +15,8 @@
         }
         h1 {
             text-align:center;
-            
-            color: #fffcff;
+            text-decoration:underline ;
+            color: #d3ea95;
             text-shadow: dimgray;
           
         }
@@ -39,18 +40,18 @@
 
         }
         button{
-            background-color:#12a21e;
+            background-color:#269622;
             justify-content: center;
             
         }
         button:hover{
-            background-color: rgb(65, 130, 4);
+            background-color: rgb(39, 83, 53);
         }
         table{
             justify-content: center;
             width: 100%;
             text-align:left;
-            background-color: #ffffff;
+            background-color: #fcf5f9;
             border: 2px;
             box-sizing: border-box;
             border-collapse: collapse;
@@ -66,7 +67,7 @@
         }
 
         th{
-            background-color: rgba(203, 196, 196, 0.936);
+            background-color: rgba(219, 41, 115, 0.936);
             color: rgb(26, 21, 21);
             
             
@@ -89,7 +90,39 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-         @media (max-width: 600px) {
+        @media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    form, table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+    input, select, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    th, td {
+        font-size: 13px;
+        padding: 6px;
+        
+    }
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .edit-btn, .delete-btn {
+        width: 100%;
+    }}
+    @media (max-width: 600px) {
     table {
         width: 100%;
         border-collapse: separate; 
@@ -108,13 +141,14 @@
     tr {
         height: auto;              
     }
-     .edit-btn, .delete-btn {
-        width: 80px;         
+    .edit-btn, .delete-btn {
+        width: 80px;          
         padding: 5px;
         font-size: 13px;
         border-radius: 6px;
-        color: rgb(230, 215, 215);         
-    }          
+        color: rgb(230, 215, 215);        
+    }
+     
 
 }
        
