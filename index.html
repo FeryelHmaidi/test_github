@@ -89,43 +89,28 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @media (max-width: 600px) {
-    h1 {
-        font-size: 20px;
-        text-align: center;
-    }
-    form, table {
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-    }
-    input, select, button {
-        font-size: 14px;
-        padding: 8px;
-    }
-    th, td {
-        font-size: 13px;
-        padding: 6px;
-    }
-    button {
-        padding: 8px;
-        font-size: 14px;
-    }
-    
-    .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-    .edit-btn, .delete-btn {
-        width: 100%;
-    }
+         @media (max-width: 600px) {
     table {
-        background-color: #e0e0e0; 
-        width: 100%;           
-        border-collapse: collapse; 
-        margin: 0 auto; 
+        width: 100%;
+        border-collapse: separate; 
+        border-spacing: 0;          
+        table-layout: fixed;        
+        background-color: #e0e0e0;
+    }
+
+    th, td {
+        width: 10%;                
+        padding: 10px;             
+        text-align: center;       
+        box-sizing: border-box;   
+    }
+
+    tr {
+        height: auto;              
+    }
+
 }
+       
 
         
     </style>
