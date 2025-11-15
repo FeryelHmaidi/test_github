@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,24 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application CRUD Pour La Gestion Des Etudiants</title>
     <style>
+        
         body {
-            background-color:#48093c;
+            background-color: #E8EEF8;
             font-family:Arial,sans-serif;
             margin:20px;
             font-size: medium;
+            
 
         }
+        .logo {
+              width: 60px;
+              height: auto;
+               width: 80px; 
+              transition: transform 0.3s ease; 
+              cursor: pointer; }
+
+        .log:hover{
+             transform: scale(1.5);
+        }
+        .web{
+            width:150px;
+            height: 90px; 
+           position: absolute;
+           top: 0;
+           right: 0;
+           transition: transform 0.3s ease; 
+           cursor: pointer;
+           margin: 10px 10px;
+        }
+        .web:hover{
+             transform: scale(1.5);
+        }
+        
         h1 {
             text-align:center;
-            text-decoration:underline ;
-            color: #d3ea95;
+            font-weight: bold;
+            color: #1E3A8A;
             text-shadow: dimgray;
+            padding: auto;
+            margin-top: 20px;
+           
           
         }
         form {
             margin-bottom:20px;
             padding:20px;
-            background-color: aliceblue;
+            background-color:  #1E3A8A;
             border-radius: 8px;
             box-shadow: rgb(175, 213, 175);
 
@@ -33,29 +61,32 @@
             width: 100%;
             margin: 10px 0 ;
             padding:10px  ;
-            border:2px solid #ccc;
+            border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             text-align:left;
 
         }
         button{
-            background-color:#269622;
+            background-color:#10B981;
             justify-content: center;
+            border-radius: 6px;
+            cursor: pointer;
             
         }
         button:hover{
-            background-color: rgb(39, 83, 53);
+            background-color: rgb(70, 144, 79);
         }
         table{
+            padding: 20px 10px;
             justify-content: center;
             width: 100%;
             text-align:left;
-            background-color: #fcf5f9;
+            background-color: #ffffff;
             border: 2px;
             box-sizing: border-box;
             border-collapse: collapse;
-            border-radius: 4px rgb(220, 138, 24);
+            margin: 20px auto;
             
             
         }
@@ -66,22 +97,23 @@
             
         }
 
-        th{
-            background-color: rgba(219, 41, 115, 0.936);
-            color: rgb(26, 21, 21);
-            
-            
-          
+        
+        thead{
+            background: #374151;
+            color: white;
+            padding: 15px;
         }
          #search, #filter {
             margin-bottom: 10px;
         }
         .edit-btn {
-            background: #ffc107;
-            color: black;
+           background: #FBBF24;
+           color: #000;
+           border-radius: 6px;
         }
         .delete-btn {
-            background: #dc3545;
+            background: #EF4444;
+            color: white;
         }
         .fade-in {
             animation: fadeIn 0.5s ease-in;
@@ -146,19 +178,49 @@
         padding: 5px;
         font-size: 13px;
         border-radius: 6px;
-        color: rgb(230, 215, 215);        
     }
      
 
 }
-       
+footer{
+    background: #4B164C;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;}
+
+    footer a:hover{
+         color: #EF4444;
+    }
+    .logo-footer {
+        width: 80px; 
+        transition: transform 0.3s ease; 
+        cursor: pointer;
+}
+
+    .logo-footer:hover {
+       transform: scale(1.5); 
+}
+   footer img{
+    align-items: center;
+     margin-right: 150px
+   }
+  
+ 
+
+
 
         
     </style>
 </head>
 <body>
+    <div>
+         <img src="images.png" alt="Logo" class="logo">
+         <h1 >Système De Gestion Des Etudiants</h1>
+         <img src="web.png" alt="web" class="web">
+  </div>
     
-    <h1 >Système De Gestion Des Etudiants</h1>
     
     <form method="#" id="form"  >
         <input type="text"  id="name" placeholder="Nom et Prenom de l'etudiant...">
@@ -171,7 +233,7 @@
                 <option value="D">D</option>
                 <option value="F">F</option>
             </select>
-            <button type="submit" >Ajouter Etudiant</button>
+            <button type="submit" >Ajauter Etudiant</button>
 
     </form>
     <div>
@@ -199,6 +261,29 @@
             <!--les etudiants seront affichés ici-->
         </tbody>
     </table>
+    <hr>
+    <footer>
+        
+        <aside>
+        
+
+            <p><h3>Made by Feryel Hmaidi MI2A</h3></p>
+            <br>
+            <p>contactez-moi :
+            <a href="mailto:tonemail@example.com" >feryel.hmaidi@etudiant-fst.utm.tn</a></p>
+            <a href="https://fst.rnu.tn" target="_blank">
+           <img src="utm-og-img.png" alt="Logo" class="logo-footer">
+            </a>
+            
+           <img src="js.png" alt="Logo" class="logo-footer" class="logo-js">
+            
+           <img src="images (1).png" alt="Logo" class="logo-footer" class="htm">
+            
+
+        </aside>
+        
+        
+    </footer>
     
 </body>
 </html>
