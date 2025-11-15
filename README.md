@@ -78,4 +78,7 @@ Cette application est **légère** et fonctionne entièrement dans le navigateur
 - Fonction `renderStudents()` centralisée pour rafraîchir le tableau après chaque action  
 - Tests et validation progressive de chaque fonctionnalité  
 - j'ai fait des recherches sur google et youtube pour apprendre des nouveaux choses utiles et qui me permettent de finir le projet avec succés 
-- De plus j'ai regardé des videos pour mieux comprendre le DOM et l'appliquer sur mon projet
+- De plus j'ai regardé des videos pour mieux comprendre le DOM et l'appliquer sur mon projets
+  * Lien vers la page GitHub Pages: https://feryelhmaidi.github.io/test_github/
+
+ 
