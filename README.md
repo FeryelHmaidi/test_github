@@ -1,6 +1,6 @@
 # Nom de projet:  Système de Gestion des Étudiants
 
-# présenté par**Hmaidi Feryel**
+# présenté par git**Hmaidi Feryel**
 
 
 #  Description du projet: 

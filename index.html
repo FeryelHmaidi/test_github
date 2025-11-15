@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application CRUD Pour La Gestion Des Etudiants</title>
     <style>
+        
         body {
-            background-color:#342030;
+            background-color:#600d40;
             font-family:Arial,sans-serif;
             margin:20px;
             font-size: medium;
@@ -14,9 +15,10 @@
         }
         h1 {
             text-align:center;
-            
-            color: #fffcff;
+            text-decoration:underline ;
+            color: #e6e6e6;
             text-shadow: dimgray;
+           
           
         }
         form {
@@ -39,18 +41,18 @@
 
         }
         button{
-            background-color:#66be34;
+            background-color:#269622;
             justify-content: center;
             
         }
         button:hover{
-            background-color: rgb(25, 143, 66);
+            background-color: rgb(70, 144, 79);
         }
         table{
             justify-content: center;
             width: 100%;
             text-align:left;
-            background-color: #ffffff;
+            background-color: #fcf5f9;
             border: 2px;
             box-sizing: border-box;
             border-collapse: collapse;
@@ -66,7 +68,7 @@
         }
 
         th{
-            background-color: rgba(203, 196, 196, 0.936);
+            background-color: rgba(206, 117, 154, 0.936);
             color: rgb(26, 21, 21);
             
             
@@ -106,6 +108,7 @@
     th, td {
         font-size: 13px;
         padding: 6px;
+        
     }
     button {
         padding: 8px;
@@ -119,8 +122,47 @@
     }
     .edit-btn, .delete-btn {
         width: 100%;
+    }}
+    @media (max-width: 600px) {
+    table {
+        width: 100%;
+        border-collapse: separate; 
+        border-spacing: 0;          
+        table-layout: fixed;        
+        background-color: #e0e0e0;
     }
+
+    th, td {
+        width: 10%;                
+        padding: 10px;             
+        text-align: center;       
+        box-sizing: border-box;   
+    }
+
+    tr {
+        height: auto;              
+    }
+    .edit-btn, .delete-btn {
+        width: 80px;          
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+     
+
 }
+
+footer{
+    background-color: #6f465f;
+}
+ aside{
+    font-size: 9px;
+    color: #e0e0e0;
+    margin-top: 100px;
+    
+}
+
+
 
         
     </style>
@@ -168,6 +210,20 @@
             <!--les etudiants seront affichés ici-->
         </tbody>
     </table>
+    <hr>
+    <footer>
+        
+        <aside>
+            <p>About me:</p>
+            <br>
+            <p><h3>made by FERYEL Hmaidi</h3></p>
+            <br>
+            <a >feryel.hmaidi@etudiant-fst.utm.tn</a>
+
+        </aside>
+        
+        
+    </footer>
     
 </body>
 </html>
