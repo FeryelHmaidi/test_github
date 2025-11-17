@@ -4,225 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application CRUD Pour La Gestion Des Etudiants</title>
-    <style>
-        
-        body {
-            background-color: #E8EEF8;
-            font-family:Arial,sans-serif;
-            margin:20px;
-            font-size: medium;
-
-            
-
-        }
-        .logo {
-              width: 60px;
-              height: auto;
-               width: 80px; 
-              transition: transform 0.3s ease; 
-              cursor: pointer; }
-
-        .log:hover{
-             transform: scale(1.5);
-        }
-        .web{
-            width:150px;
-            height: 90px; 
-           position: absolute;
-           top: 0;
-           right: 0;
-           transition: transform 0.3s ease; 
-           cursor: pointer;
-           margin: 10px 10px;
-        }
-        .web:hover{
-             transform: scale(1.5);
-        }
-        
-        h1 {
-            text-align:center;
-            font-weight: bold;
-            color: #1E3A8A;
-            text-shadow: dimgray;
-            padding: auto;
-            margin-top: 20px;
-             
-           
-          
-        }
-        form {
-            margin-bottom:20px;
-            padding:20px;
-            background-color:  #1E3A8A;
-            border-radius: 8px;
-            box-shadow: rgb(175, 213, 175);
-           
-
-        }
-        input,select,button{
-            display:flex;
-            width: 100%;
-            margin: 10px 0 ;
-            padding:10px  ;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            text-align:left;
-
-        }
-        button{
-            background-color:#10B981;
-            justify-content: center;
-            border-radius: 6px;
-            cursor: pointer;
-            
-        }
-        button:hover{
-            background-color: rgb(70, 144, 79);
-        }
-        table{
-            padding: 20px 10px;
-            justify-content: center;
-            width: 100%;
-            text-align:left;
-            background-color: #ffffff;
-            border: 2px;
-            box-sizing: border-box;
-            border-collapse: collapse;
-            margin: 20px auto;
-            
-            
-        }
-        th td {
-            padding: 10px;
-            border-bottom: 10px 0;
-
-            
-        }
-
-        
-        thead{
-            background: #374151;
-            color: white;
-            padding: 15px;
-        }
-         #search, #filter {
-            margin-bottom: 10px;
-        }
-        .edit-btn {
-           background: #FBBF24;
-           color: #000;
-           border-radius: 6px;
-        }
-        .delete-btn {
-            background: #EF4444;
-            color: white;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 600px) {
-    h1 {
-        font-size: 20px;
-        text-align: center;
-        
-    }
-    form, table {
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-    }
-    input, select, button {
-        font-size: 14px;
-        padding: 8px;
-    }
-    th, td {
-        font-size: 13px;
-        padding: 6px;
-        
-    }
-    button {
-        padding: 8px;
-        font-size: 14px;
-    }
-    
-    .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-    .edit-btn, .delete-btn {
-        width: 100%;
-    }}
-    @media (max-width: 600px) {
-    table {
-        width: 100%;
-        border-collapse: separate; 
-        border-spacing: 0;          
-        table-layout: fixed;        
-        background-color: #e0e0e0;
-    }
-
-    th, td {
-        width: 10%;                
-        padding: 10px;             
-        text-align: center;       
-        box-sizing: border-box;   
-    }
-
-    tr {
-        height: auto;              
-    }
-    .edit-btn, .delete-btn {
-        width: 80px;          
-        padding: 5px;
-        font-size: 13px;
-        border-radius: 6px;
-    }
-     
-
+     <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
-footer{
-    background: #3d0932;
-    color: white;
+
+body {
+    background: linear-gradient(120deg, #e0f7fa, #f0f4f8);
+    color: #1f2937;
+    font-size: 16px;
+    line-height: 1.6;
     padding: 20px;
+    transition: background 0.5s ease;
+}
+
+.logo {
+    width: 80px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(15deg) scale(1.5);
+    filter: drop-shadow(0 0 10px #10B981);
+}
+
+.web {
+    width: 150px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+}
+
+.web:hover {
+    transform: scale(1.5) rotate(-10deg);
+    filter: drop-shadow(0 0 15px #FBBF24);
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #1E3A8A;
+    margin: 20px 0;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #10B981;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    background-image: 
+        linear-gradient(rgba(30, 58, 138, 0.6), rgba(37, 99, 235, 0.6)),
+        url('image.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 8px #10B981;
+    transform: scale(1.02);
+}
+
+button {
+    background: linear-gradient(90deg, #10B981, #059669);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #059669, #10B981);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+thead {
+    background: linear-gradient(90deg, #374151, #1f2937);
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+tr:hover {
+    background: rgba(16,185,129,0.1);
+}
+
+.edit-btn {
+    background: linear-gradient(90deg, #FBBF24, #F59E0B);
+    color: #000;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.delete-btn {
+    background: linear-gradient(90deg, #EF4444, #B91C1C);
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+#search, #filtre {
+    max-width: 500px;
+    margin: 10px auto;
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#search:focus, #filtre:focus {
+    box-shadow: 0 0 8px #10B981;
+    transform: scale(1.02);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    form, table, #search, #filtre { width: 100%; overflow-x: auto; }
+    input, select, button, th, td { font-size: 14px; padding: 10px; }
+    .edit-btn, .delete-btn { width: 100%; margin: 3px 0; }
+    table { table-layout: fixed; width: 100%; }
+    th, td { text-align: center; }
+}
+
+footer {
+    background: linear-gradient(90deg, #4B164C, #7C3AED);
+    color: white;
+    padding: 30px 20px;
     text-align: center;
     margin-top: 40px;
-    position: relative;}
-
-    footer a:hover{
-         color: #EF4444;
-    }
-    .logo-footer {
-        width: 80px; 
-        transition: transform 0.3s ease; 
-        cursor: pointer;
 }
 
-    .logo-footer:hover {
-       transform: scale(1.5); 
-}
-   footer img{
+footer a { color: white; text-decoration: none; transition: color 0.3s ease; }
+footer a:hover { color: #10B981; }
+
+footer aside {
+    display: flex;
+    justify-content: center;
     align-items: center;
-     margin-right: 150px
-   }
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.logo-footer {
+    width: 80px;
+    height: auto;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+}
+
+.logo-footer:hover {
+    transform: rotate(-10deg) scale(1.5);
+    filter: drop-shadow(0 0 15px #FBBF24);
+}
+</style>
+
+
   
- 
-
-
 
         
-    </style>
+    
 </head>
 <body>
     <div>
-         <img src="images.png" alt="Logo" class="logo">
+         <img src="fst.png" alt="Logo" class="logo">
          <h1 >Système De Gestion Des Etudiants</h1>
-         <img src="web.png" alt="web" class="web">
+         <img src="téléchargement.jpeg" alt="web" class="web">
   </div>
     
     
@@ -276,13 +296,13 @@ footer{
             <p>contactez-moi :
             <a href="mailto:tonemail@example.com" >feryel.hmaidi@etudiant-fst.utm.tn</a></p>
             <a href="https://fst.rnu.tn" target="_blank">
-           <img src="utm-og-img.png" alt="Logo" class="logo-footer">
+           <img src="utm.png" alt="Logo" class="logo-footer">
             </a>
             
-           <img src="js.png" alt="Logo" class="logo-footer" class="logo-js">
+           <img src="JavaScript-Logo.png" alt="Logo" class="logo-footer" class="logo-js">
             
-           <img src="images (1).png" alt="Logo" class="logo-footer" class="htm">
-            
+           <img src="web1.png" alt="Logo" class="logo-footer" class="htm">
+           <img src="web.jpg" alt="Logo" class="logo-footer" class="htm">
 
         </aside>
         
