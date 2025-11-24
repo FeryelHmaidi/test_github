@@ -28,7 +28,7 @@ L’application permet d’ajouter, modifier, supprimer et visualiser des étudi
 
 
 ## Comment Utiliser🤔🧠?
-💡
+
 1. Ouvrez le fichier `index.html` dans **VS Code** ou tout éditeur de texte.  
 2. Exécutez-le sur un navigateur web moderne (**Chrome**, **Firefox**, etc.).  
 3. Ajoutez des étudiants via le formulaire.  
@@ -84,8 +84,8 @@ Cette application est **légère** et fonctionne entièrement dans le navigateur
 ## Informations de rendu
 - Enseignante : **Rania Maalej**  
 - Dépôt à faire sur Moodle avec :  
-  - 🔗 Lien du dépôt GitHub : [Voir le dépôt](https://github.com/hmaidi-feryel/hmaidi_feryel_gestion_etudiants)  
-  - 🔗 Lien GitHub Pages (rendu final) : [Voir le projet en ligne](https://hmaidi-feryel.github.io/hmaidi_feryel_gestion_etudiants/)
+  - 🔗 Lien du dépôt GitHub : [Voir le dépôt](https://github.com/FeryelHmaidi/test_github.git)  
+  - 🔗 Lien GitHub Pages (rendu final) : [Voir le projet en ligne]( https://feryelhmaidi.github.io/test_github/)
 
 
 
