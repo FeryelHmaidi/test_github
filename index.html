@@ -231,8 +231,9 @@ footer aside {
     transform: rotate(-10deg) scale(1.5);
     filter: drop-shadow(0 0 15px #FBBF24);
 }
-
-
+.color{
+    color: cornflowerblue;
+}
 
 </style>
 
@@ -261,7 +262,7 @@ footer aside {
                 <option value="D">D</option>
                 <option value="F">F</option>
             </select>
-            <button type="submit" >Ajauter Etudiant</button>
+            <button type="submit" >Ajouter Etudiant</button>
 
     </form>
     <div>
@@ -295,7 +296,7 @@ footer aside {
         <aside>
         
 
-            <p><h3>Made by Feryel Hmaidi MI2A</h3></p>
+            <p class="color"><h3>Made by Feryel Hmaidi MI2A</h3></p>
             <br>
             <p>contactez-moi :
             <a href="mailto:tonemail@example.com" >feryel.hmaidi@etudiant-fst.utm.tn</a></p>
@@ -316,9 +317,7 @@ footer aside {
 </body>
 </html>
 <script>
-   
- 
-    const form = document.getElementById("form");
+            const form = document.getElementById("form");
         const Inputname = document.getElementById("name");
         const Inputage = document.getElementById("age");
         const Inputnote = document.getElementById("note");
