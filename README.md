@@ -27,7 +27,7 @@ L’application permet d’ajouter, modifier, supprimer et visualiser des étudi
 
 
 
-## Comment Utiliser🤔🧠?
+## Comment Utiliser?
 
 1. Ouvrez le fichier `index.html` dans **VS Code** ou tout éditeur de texte.  
 2. Exécutez-le sur un navigateur web moderne (**Chrome**, **Firefox**, etc.).  
@@ -68,7 +68,7 @@ Cette application est **légère** et fonctionne entièrement dans le navigateur
 - Animations CSS pour UX  
 - Design responsive adapté mobile, tablette et desktop  
 
-## 🧠 Difficultés rencontrées:
+##  Difficultés rencontrées:
 - Gestion des identifiants uniques pour les étudiants  
 - Mise à jour dynamique du tableau après modification  
 - Tri et filtrage combinés avec la persistance des données  
